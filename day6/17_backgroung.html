@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17.배경</title>
+</head>
+<body>
+    <style>
+        div{border: 1px solid #ccc; width: 200px; height: 200px;}
+       /*
+        background-color : 색상 배경
+        background-image : 이미지 배경
+        backgroung : 축약형 (색상 , 이미지 둘 다 가능)
+       */
+        .cls-1{background-color: #e87070 ; padding : 10px;background-clip: border-box;}
+        .cls-2{background-color: #e87070 ; padding : 10px;background-clip: content-box;} 
+        .cls-3{background-color: #e87070 ; padding : 30px;background-clip: border-box;}   
+   </style>
+   <div class="cls-1"></div>
+   <div class="cls-2"></div>
+   <div class="cls-3"></div>
+   <hr>
+   <style>
+    .bg-img {background-image:  url('https://search.pstatic.net/sunny/?src=https%3A%2F%2Fupload3.inven.co.kr%2Fupload%2F2024%2F06%2F17%2Fbbs%2Fi1764694995.png&type=sc960_832');}
+    .cls-4 {background-size: contain; background-repeat: repeat;}
+  </style>
+    <div class="cls-4 bg-img"></div>
+</body>
+
+
+</html>

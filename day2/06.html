@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06</title>
+</head>
+<body style="padding-bottom: 200px;">
+    <!--
+        form tag
+        엔드유저가 작성한/선택한 내용을 백엔드로 전달
+        action, method 작성 필수
+        action : End-Point
+        method : 전달 방식 (get/post)
+        input관련 엘리먼트의 name이 백엔드에서 값을 받는 멤버필드명과 같아야 한다.
+    -->
+    <h3>post방식</h3>
+    <form action="http://localhost:8080/api/user/test" method="post">
+        <div>
+            <label>아이디: <input type="text" name="uid"></label>
+        </div>
+        <div>
+            <label>비밀번호: <input type="password" name="upw" placeholder="비밀번호"></label>
+        </div>
+        <div>
+            <label>이름: <input type="text" name="nm"></label>
+        </div>
+        <div>
+            <label>프로필 사진: <input type="file" name="pic" accept="image/*"></label>
+        </div>
+        <div>
+            <input type="submit" value="전송">
+        </div>
+    </form>
+    <h3>get방식</h3>
+    <form action="http://localhost:8080/api/user/test" method="get">
+        <div>
+            <label>아이디: <input type="text" name="uid"></label>
+        </div>
+        <div>
+            <label>비밀번호: <input type="password" name="upw"></label>
+        </div>
+        <div>
+            <label>이름: <input type="text" name="nm"></label>
+        </div>
+        <div>
+            <label>프로필 사진: <input type="file" name="pic" accept="image/*"></label>
+        </div>
+        <div>
+            <input type="submit" value="전송">
+        </div>
+    </form>
+    <h3>form 태그에서 사용할 수 있는 자식 노드</h3>
+    <form action = "/dddd" method="post">
+        <!--
+            label 태그로 감싼 여부 차이
+            label로 감싼 '아이디'를 클릭하면 input으로 이동함.
+        -->
+        <!-- tabindex는 탭 버튼 클릭시 포커스 이동되는 순서를 지정할 수 있음. -->
+        <div>아이디: <input type="text" name="" id="" tabindex="1"></div>
+        <div><label>아이디: <input type="text" name="" id="" value="ddd" tabindex="3" placeholder="특수기호 3개 "></label></div>
+        <!-- label로 감싸줄 수 없는 상황일 때 for - id 값을 연결해줌. -->
+        <div><label for="id-input-1">아이디: </label></div>
+        <div><input type="text" name="" id="id-input-1" tabindex="2"></div>
+        <!--
+            type number는 숫자만 적을 수 있음.
+            넘어갈때는 정수형으로 보이는데 실제로는 문자열로 날아감
+            만약 받았다면 servlet에서 변환 시켜준것
+        -->
+        <div><label>넘버: <input type="number" value="10" step="5"></label></div>
+        <!--
+            버튼 만드는 방법들
+            버튼 1,2 : 일반 버튼 -> form 태그 안에서는 아무일도 안하는 버튼.
+            버튼 3,4 : default - submit 버튼
+            버튼 5   : 이미지 submit 버튼
+            버튼 6   : 리셋 버튼
+            submit 버튼은 form 태그 트리거 역할 ( 백엔드 데이터 전송 시작! )
+            reset 버튼은 form 엘리먼트들을 초기상태로 만듦
+            종류 : 일반버튼, 서브밋버튼, 리셋버튼
+            form 태그 바깥에 위치하면 종류와 상관없이 일반 버튼이 됨.
+        -->
+        <div>버튼1: <input type="button" value="button"></div>
+        <div>버튼2: <button type="button">버튼2</button></div>
+        <div>버튼3: <button>버튼3</button></div>
+        <div>버튼4: <input type="submit" value="submit"></div>
+        <div>버튼5: <input type="image" src="https://naverpa-phinf.pstatic.net/MjAyNDA3MTdfNzUg/MDAxNzIxMjAzMzQ5MzEy.n_m3r40PDwmGFIbVyIHF2mRAe2vKoci3_hi6NSUok8sg.ZFDDFddTE_WHd5EvkEl8M5cSvCmmMxRgl0lv9Fv1wMAg.JPEG/%EB%A0%89%EC%84%9C%EC%8A%A4_%EB%84%A4%EC%9D%B4%EB%B2%84GFA_342x228_17212033493021288604894889517942.jpg"></div>
+        <div>버튼6: <input type="reset" value="reset"></div>
+        <!--
+            checkbox: 여러값을 선택하고 싶을 때 사용
+            실제로 날아가는 값은 value 값이 날아감
+            name을 통일 ( 하나의 그룹이 된다. )
+                > 배열로 넘어감
+                > 백엔드는 List형식으로 받으면 됨.
+            ex) List<Integer> hobbyList ;
+        -->
+        <div>
+            취미:
+            <label>축구<input type="checkbox" name="hobbyList" value="1" checked></label>
+            <label>농구<input type="checkbox" name="hobbyList" value="2"></label>
+            <label>배구<input type="checkbox" name="hobbyList" value="3" checked></label>
+        </div>
+        <!-- 색상 선택 -->
+        <div>
+            <label>색 선택: <input type="color" value="#FFFFFF"></label>
+        </div>
+        <!--
+            Picker 피커
+            날짜, 일시 선택
+        -->
+        <div>
+            <label>날짜: <input type="date" value="2024-01-01"></label>
+        </div>
+        <div>
+            <label>일시: <input type="datetime-local" value="2024-01-01 12:13:14"></label>
+        </div>
+        <!--
+            radio-button : 단 하나만 선택이 가능함.
+            name을 통일은 필수 ( 하나의 그룹이 되고 그룹 중 하나의 값만 선택 가능. )
+            tip. 하나정도 default로 선택 ( checked 속성, 가장 마지막에 준 checked 설정을 따라감. )
+        -->
+        <div>
+            성별1:
+            <label>여성<input type="radio" value="0"></label>
+            <label>남성<input type="radio" value="1"></label>
+            <label>모름<input type="radio" value="2"></label>
+            <br>
+            성별2:
+            <label>여성<input type="radio" name="gender" value="0" checked></label>
+            <label>남성<input type="radio" name="gender" value="1"></label>
+            <label>모름<input type="radio" name="gender" value="2"></label>
+        </div>
+        <div>
+            <label><input type="range" value="0" min="0" max="100" id="id-range"></label>
+            <span id="id-span-range-value">0</span>
+        </div>
+        <div>
+            <label>자기소개:
+                <textarea name="intro">자기소개작성</textarea>
+            </label>
+        </div>
+        <!--
+            셀렉트 박스, option 태그에 value 속성이 있으면 value 값이 날아가고
+            없으면 option에 포함된 text-node가 서버로 날아간다.
+        -->
+        <div>
+            <select name="location">
+                <option value="1">서울</option>
+                <option value="2">대전</option>
+                <option value="3" selected>대구</option>
+                <option value="4">부산</option>
+            </select>
+        </div>
+        <div>
+            <label>
+                배우고 싶은 언어 : 
+                <input type = "text" name = "selLanguage" list="sel-language">
+                <datalist id = "sel-language">
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>JAVASCRIPT</option>
+                </select>
+            </label>
+        </div>
+    </form>
+    <!--
+        일반 버튼은 보통 click이벤트를 binding 하여 하고 싶은 작업을 연결함.
+    -->
+   <h3>form-tag 바깥에서의 버튼들</h3>
+    <div>버튼1: <input type="button" value="select 바꾸기" id="id-btn-chage-selected"></div>
+    <div>버튼2: <button type="button">버튼2</button></div>
+    <div>버튼3: <button>버튼3</button></div>
+    <div>버튼4: <input type="submit" value="submit"></div>
+    <div>버튼5: <input type="image" src="https://naverpa-phinf.pstatic.net/MjAyNDA3MTdfNzUg/MDAxNzIxMjAzMzQ5MzEy.n_m3r40PDwmGFIbVyIHF2mRAe2vKoci3_hi6NSUok8sg.ZFDDFddTE_WHd5EvkEl8M5cSvCmmMxRgl0lv9Fv1wMAg.JPEG/%EB%A0%89%EC%84%9C%EC%8A%A4_%EB%84%A4%EC%9D%B4%EB%B2%84GFA_342x228_17212033493021288604894889517942.jpg"></div>
+    <div>버튼6: <input type="reset" value="reset"></div>
+    
+        <form action = "">
+
+        </form>
+    
+    <script>
+        var $range = document.getElementById('id-range') ;
+        var $range_value = document.getElementById('id-span-range-value') ;
+        // 클로저, 클로저 아닌 방법
+        $range.addEventListener('change', function(e) {
+            console.log(e.target.value) ;
+            $range_value.innerText = e.target.value ;
+        }) ;
+        var $idBtnChageSelected = document.querySelector('#id-btn-chage-selected') ;
+        $idBtnChageSelected.addEventListener('click', e => {
+            var $selectLocation = document.querySelector('select[name=location]') ;
+            console.log($selectLocation) ;
+
+            var $optionArr = $selectLocation.querySelectorAll('option');
+            console.log($optionArr);
+
+            for(var i=0; 1<$optionArr.length; i++){
+                var item = $optionArr[i];
+                if(item.getAttribute('value') === 2){
+                    item.setAttribute('selected',true);
+                }else{
+                    item.setAttribute('selected')
+                    //item.selected = false; 
+                }
+            }
+        }) ;
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <style>
+        /*
+            margin - 경계선 바깥
+            border - 엘리먼트 경계선
+            padding - 경계선 안쪽
+            content - 내용 
+        */
+        .cls-1>div{border: 1px solid #ccc;}
+        .cls-1>div:first-child{margin-left: 30px;}
+        .cls-1>div:nth-child(2){padding-left: 30px;}
+      </style>
+      <div class="cls-1">
+      <div>안녕핫세용</div>
+      <div>안녕2하세요</div>
+      </div>
+      <hr>
+      <style>
+         .cls-2>div{border : 1px solid #ccc}
+         .cls-2>div:nth-child(2){margin: 10px;} /*4면 10 px 마진값 적용 */
+        .cls-2>div:nth-child(3){padding: 10px;}/*4면 10 px 마진값 적용 */
+        .cls-2>div:nth-child(4){padding: 10px 30px;}/*4면 10 px 위 아래 , 30px 좌 우  마진값 적용 */
+        .cls-2>div:nth-child(5){padding: 10px 30px 50px;}/*4면 10 px 위 30px 좌우 , 50px 아래  마진값 적용 */
+        .cls-2>div:nth-child(6){padding: 10px 30px 50px 70px;}/*4면 10 px 위 30px 우 , 50px 아래  70px 좌 마진값 적용 */
+        .cls-2>div:nth-child(7){padding-left: 30px;} /*padding 왼쪽*/
+        .cls-2>div:nth-child(8){margin-right:30px; margin-top: 20px;} /*margin 우 위 */
+        .cls-2>div:nth-child(9){margin: 20px 30px 0 0} /*margin 우 위 */
+    </style>
+      <div class="cls-2">
+        <div>안녕핫세용</div>
+        <div>안녕2하세요</div>
+        <div>안녕3하세요</div>
+        <div>안녕4하세요</div>
+        <div>안녕5하세요</div>
+        <div>안녕6하세요</div>
+        <div>안녕7하세요</div>
+        <div>안녕8하세요</div>
+        <div>안녕9하세요</div>
+      </div>
+
+      <hr>
+      <style>
+            /*
+            기본적으로 width, height 는 content 크기를 지정 
+            box-sizing 기본값이 content-box 이기 떄문
+            box-sizing 값을 border-box로 변경하면 width , heigth 는 border크기 기준으로 된다  
+            {box-sizing : border-box;} 이속성을 무조건 주는것이 좋다 
+            
+      
+            */
+        .cls-3>div {border: 1px solid #ccc;}
+        .cls-3>div:first-child{width: 100px; height: 100px;}
+        .cls-3>div:nth-child(2){width: 100px; height: 100px; padding: 20px;}
+            /*broder 1px *2 padding 20px *2 */
+        .cls-3>div:nth-child(3){width: 58px; height: 58px; padding: 20px;}
+        .cls-3>div:nth-child(4){box-sizing:border-box; width:100px; height: 100px; padding: 20px;}
+      
+      
+      </style>
+      <div class="cls-3">
+        <div>안녕핫세용 실제크기는 100x100 </div>
+        <div>안녕핫세용2 실제크기는 141x141</div>
+        <div>1번 크기와 맞춤. 100x100</div>
+        <div>1번 크기와 맞춤. 100x100</div>
+      </div>
+</body>
+</html>

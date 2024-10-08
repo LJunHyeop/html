@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01.html</title>
+   <!-- style 태그는 css 문법 영역 
+   css 는 선택자 : 태그 / 클래스 / 아이디 기본적으로  선택자가 존재함  
+    태그 선택자 : 태그명 모든 해당하는 태그 css 속성을 주기위해서 
+    클래스 선택자 : . 클래스명
+    아이디 선택자 # 아이디명
+
+    선택한 엘리먼트 들에게 속성을 적용 
+    css 는 화면에 랜더링이 될때 바로 적용이 됐으면 하기떄문에
+    위쪽에 작성되거나 import를 한다.
+    (css 로딩이 끝난 후 body을 랜더링 하기위해)
+
+    js 는 화면 랜더링이 끝난 후 로딩을 한다. 
+    주로 js 는 엘리먼트를 컨트롤 
+   -->
+   <style>
+   /*
+    css 주석 , html 주석은 사용 불가 
+   */
+        div{color :red} /* color 는 폰트 색상 */
+        .cls-1 {background-color:blue;} /* 똑같은 엘리먼트 여러속성*/
+        #id-1 {font-weight:  bold;} /* 단하나의 속성을먹이고싶다 */
+    </style>
+    <!-- <script defer src=""> </script> -->
+</head>
+<body>
+    <h1>실시간 반영</h1>
+    <h3>실시간 반영 </h3>
+    <div>1-div </div>
+    <div class = "cls-1 cls-2 cls-3 baba dddd" id="id-2" onclick="alert('안녕')"></div>
+    <p class = "cls-1" id = "id-1" style ="color: red;">3-p</p>
+    <p>&copy; &rarr;</p>
+    <script>
+        var $id_1 = document.getElementById('id-1');
+        console.log ('id_1:', $id_1);
+        $id_1.addEventListener('click',function(){
+
+        });
+    </script>
+</body>
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    /*
+        CSS 학습때 중요한 부분 
+         - 선택자 : 속성을 적용하고 싶은 대상을 선택할 수 있어야함.
+         - 캐스캐이딩 여부 : 속성 상속이 되는 속성이 있고 아닌 속성이 잇음
+         - 우선수위 : 같은 엘리먼트에 다른속성을 적용했을 시 어느 것이 적용이 될지 알아야함 
+        선택자 [ㅁ] {선택한 엘리먼트 에게 적용할 속성을 작성 [B]}
+        A: 태그 선택자 , 클래스 선택자 , 아이디 선택자 등 
+        B: 속성명: 속성감ㅄ, ; 세미콜론으로 다른속성과 구분 
+         */
+        .test{color: blue; font-weight:  200;}
+        div{width : 200px; height: 200px;}
+        .div-1 {background-color: aqua ;}
+
+        .div-2 {background-color: #22b9df;} 
+        .div-3 {background-color: #22b9df88;}
+        
+        .div-4{background-color: rgb(39,209,218);}
+        .div-5{background-color: rgba(93,209,218,0.35);} /*알파값 0~1 사이 값 */
+        
+        .div-6{color: #fff; background-color: #000;} 
+        .div-7{color: #f2f; background-color: #0a0;}
+    </style>
+    <title>09.</title>
+    <span class="test">안녕하세요.</span>
+    <div class="div-1">1</div>
+    <div class="div-2">2</div>
+    <div class="div-3">3</div>
+    <div class="div-4">4</div>
+    <div class="div-5">5</div>
+    <div class="div-6">6</div>
+    <div class="div-7">7</div>
+</body>
+</html>
