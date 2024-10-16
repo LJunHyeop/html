@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    color: #ff6f20;
+    padding: 10px;
+}
+
+.picture {
+    width: 100px; /* 이미지 크기 조정 */
+    height: 80px; /* 이미지 높이 조정 */
+    margin-right: 20px; /* 이미지와 제목 사이의 간격 */
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b2/Daangn_Signature_RGB.jpg');
+    background-size: contain; /* 이미지가 div의 크기를 채우도록 설정 */
+    background-position: center; /* 이미지 중앙 정렬 */
+    background-color: #ff6f20;
+    border-radius: 8px;
+    color :#ff6f20;
+}
+
+
+main {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+#recent-transactions {
+    margin-top: 20px;
+}
+
+.transaction {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}

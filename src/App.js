@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import LoginPage from './components/LoginPage'; // LoginPage 컴포넌트 임포트
+import HomePage from './components/homepage'; // HomePage 컴포넌트 임포트
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 상태 관리
+
+    const handleLogin = () => {
+        setIsLoggedIn(true); // 로그인 시 상태 변경
+    };
+
+    return (
+        <div>
+            {isLoggedIn ? <HomePage /> : <LoginPage onLogin={handleLogin} />}
+        </div>
+    );
+};
 
 export default App;
